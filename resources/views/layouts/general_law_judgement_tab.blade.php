@@ -1,5 +1,5 @@
-<div class="container-fluid" id="main_act">
-<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="container-fluid">
+<div class="navbar navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -15,7 +15,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       {{-- <ul class="nav navbar-nav"> --}}
-        {{ menu('post_1992_allPosts', 'bootstrap') }}
+        {{ menu('general_law_judgement_tab', 'bootstrap') }}
       {{-- </ul> --}}
       <form class="navbar-form navbar-right">
         <i class="fas fa-search" aria-hidden="true"></i>

@@ -36,9 +36,9 @@
                 <div class="container-fluid pull-right">
                     {{ menu('main', 'bootstrap') }}
                 </div>
-            <div class="pull-left">   
-                @include('layouts.sitelogo')
-            </div>    
+                <div class="pull-left">   
+                    @include('layouts.sitelogo')
+                </div>
             </header>
             @yield('content')
         </div>

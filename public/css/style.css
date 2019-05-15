@@ -37,24 +37,37 @@ overflow-y: auto;
 -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
-
-
 .table-wrapper-scroll-display {
   background-color: #eee;
-  height: 620px;
+  height: 560px;
   overflow: scroll;
-  
-
-/*display: block;
-max-height: 450px;
-overflow-y: scroll;*/
-/*-ms-overflow-style: -ms-autohiding-scrollbar;*/
 }
+
+.judgement_display {
+  background-color: #eee;
+  height: 650px;
+  overflow: scroll;
+  margin-bottom: 3em;
+  
+  /* display: block;
+  max-height: 450px;
+  overflow-y: scroll;
+  -ms-overflow-style: -ms-autohiding-scrollbar; */
+}
+
+.scroll-view-judgement {
+  display: block;
+  max-height: 390px;
+  width: 290px;
+  overflow-y: scroll;
+  overflow: scroll;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
 
 .table-wrapper-scroll-view {
 display: block;
 max-height: 390px;
-width: 450px;
+width: 280px;
 overflow-y: scroll;
 overflow: scroll;
 -ms-overflow-style: -ms-autohiding-scrollbar;

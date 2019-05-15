@@ -56,7 +56,7 @@
 
 @section('content')
 
-    @include('layouts.post_1992_allPosts')
+    @include('layouts.general_post_1992_tab')
 
     <div class="container-fluid" style="margin-bottom: 5em;"> 
         {{-- Nav tabs --}}
@@ -117,11 +117,13 @@
                         </span>
                         <hr>
 
-                        <a data-scroll-to="#main_act"
+                        {{-- <a data-scroll-to="#main_act"
                            data-scroll-focus="#main_act"
                            data-scroll-speed="400"
                            data-scroll-offset="-50" 
                            class="preamble_link" id="preamble_link_toggle" href="/post_1992_legislation/acts-preamble/{{ $myAct['id'] }}"><p>Introductory Text</p>
+                        </a> --}}
+                        <a class="preamble_link" id="preamble_link_toggle" href="/post_1992_legislation/acts-preamble/{{ $myAct['id'] }}"><p>Introductory Text</p>
                         </a>
                             <!-- Parts and Sections Display -->
                             @include('content.parts_sections')
@@ -141,13 +143,8 @@
 
             <!-- ACTS CONTENTS -->
             <div id="contentTab" class="tab-pane fade">
-                <div class="row">
-                     <div class="col-md-8 table-wrapper-scroll-display">
-                         
-                        {{--<div id="act_content"></div>
-                        <div id="act_preamble"></div>
-                        <div id="view_acts_section"></div> --}}
-
+                <div class="row" style="margin-bottom: 0.1em;">
+                     <div class="col-md-10 table-wrapper-scroll-display">
                         <div id="display_content"></div>
                         <div id="display_preamble"></div>
                         <div id="display_view_all_section"></div>  
@@ -157,7 +154,7 @@
                 </div>
 
                 <div class="row show">
-                    <div class="pager col-md-8 col-md-offset-6">
+                    <div class="pager col-md-10 col-md-offset-6">
                      <ul class="pager">
                         <li><a href="#" id="previous_content_act">Previous</a></li>
                         <li><a href="#" id="next_content_act">Next</a></li>

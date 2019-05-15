@@ -122,8 +122,16 @@ Route::get('/post_1992_legislation/all-regulated-acts/{id}','Post1992Controller@
 
 //Judgement routes
 Route::get('/judgement','JudgementController@index');
-Route::get('/judgement/supreme_court','JudgementController@supreme_court');
-Route::get('/judgement/high_court','JudgementController@high_court');
+	//Supreme Court
+	Route::get('/judgement/supreme_court','JudgementController@supreme_court');
+	Route::get('/judgement/supreme-court-case-title/{id}','JudgementController@supreme_court_case');
+	Route::get('/judgement/supreme-court-case-view/{id}','JudgementController@supreme_court_case_view');
+	//High Court
+	Route::get('/judgement/high_court','JudgementController@high_court');
+	Route::get('/judgement/high-court-case-title/{id}','JudgementController@high_court_case');
+	Route::get('/judgement/high-court-case-view/{id}','JudgementController@high_court_case_view');
+
+
 Route::get('/judgement/court_of_appeal','JudgementController@court_of_appeal');
 Route::get('/judgement/circuit_court','JudgementController@circuit_court');
 Route::get('/judgement/district_court','JudgementController@district_court');

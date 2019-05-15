@@ -58,7 +58,7 @@
 
 @section('content')
 
-@include('layouts.post_1992_regulation')
+@include('layouts.general_post_1992_tab')
 
 <div class="container-fluid" style="margin-bottom: 5em;"> 
 
@@ -90,11 +90,8 @@
             <div class="row">
                 <div class="col-md-6">
                    <h5><b>{{ $regulationTitle['title'] }}</b></h5>
-                   <hr><hr>
-                   <a data-scroll-to="#main_regulation"
-                      data-scroll-focus="#main_regulation"
-                      data-scroll-speed="400"
-                      data-scroll-offset="-50" class="preamble_link" id="preamble_link_toggle" href="/post_1992_legislation/regulation-preamble/{{ $regulationTitle['id'] }}">
+                   <hr>
+                   <a class="preamble_link" id="preamble_link_toggle" href="/post_1992_legislation/regulation-preamble/{{ $regulationTitle['id'] }}">
                       <p>Introductory Text</p>
                    </a>
                     
@@ -113,7 +110,7 @@
         {{-- Contents --}}
         <div id="contentTab" class="tab-pane fade">
           <div class="row">
-              <div class="col-md-8 table-wrapper-scroll-display">
+              <div class="col-md-10 table-wrapper-scroll-display">
                   <div id="display_content"></div>
                   <div id="display_preamble"></div>
                   <div id="display_view_all_section"></div>
@@ -122,7 +119,7 @@
           </div>   
 
           <div class="row show">
-            <div class="pager col-md-8 col-md-offset-6">
+            <div class="pager col-md-10 col-md-offset-6">
               <ul class="pager">
                   <li><a href="#" id="previous_content_reg">Previous</a></li>
                   <li><a href="#" id="next_content_reg">Next</a></li>

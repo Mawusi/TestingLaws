@@ -70,7 +70,7 @@
   </div>
 </div>
 
-{{-- ADVERTISEMENT --}}
+{{-- ADVERTISEMENT
 <div class="col-md-2">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -78,11 +78,11 @@
       </div>
       <div class="panel-body">
         <div class="embed-responsive embed-responsive-4by3">
-        {{--<iframe width="420" height="345" src="https://www.youtube"></iframe>--}}       
+        <iframe width="420" height="345" src="https://www.youtube"></iframe>     
       </div>        
       </div>
     </div>
-</div>
+</div>--}}
 
 
 

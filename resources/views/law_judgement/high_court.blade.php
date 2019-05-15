@@ -6,7 +6,7 @@
 
 @section('content')
 
-    @include('layouts.pre_1992_menu')
+    @include('layouts.judgement_menu')
 
     <div class="container-fluid row-margin">
         <div class="row">
@@ -15,22 +15,22 @@
                     <table class="table table-striped table-condensed" id="datatable">
                         <thead>
                             <tr>
-                                <th>All First Republic Acts</th>
+                                <th>All High Court Cases</th>
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach($allFirstRepublics as $allFirstRepublic)
-                            <tr>
-                                <td>
-                                    <a href="/pre_1992_legislation/first_republic-title/{{ $allFirstRepublic->id}}"><li style="list-style: none;">{{ $allFirstRepublic->title }}</li></a>
-                                </td>   
-                            </tr>
-                        @endforeach
+                            @foreach($highCourts as $highCourt)
+                                <tr>
+                                    <td>
+                                        <a href="/judgement/high-court-case-title/{{ $highCourt->id}}"><li style="list-style: none;">{{ $highCourt->case_title }}</li></a>
+                                    </td>   
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
-                </div>   
+                </div>
             </div>
-            @include('pre_1992_content.container_main_first_rep')
+                            @include('AllPosts.container_main_all')
         </div>
     </div>
 
