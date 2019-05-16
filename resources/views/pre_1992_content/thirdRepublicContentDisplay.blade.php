@@ -27,8 +27,8 @@
             <!-- <table class="table table-striped table-condensed">
                     <tr>
                         <td>     -->
-                <a data-scroll-to="#main_first_republic"
-                data-scroll-focus="#main_first_republic"
+                <a data-scroll-to="body"
+                data-scroll-focus="body"
                 data-scroll-speed="400"
                 data-scroll-offset="-50" class="content_link" sid="{{ $thirdArticle->id }}"  href="/pre_1992_legislation/third-republic-content/{{ $thirdArticle->id }}">
                 <li style="list-style: none;">{{ $thirdArticle->section }}</li>

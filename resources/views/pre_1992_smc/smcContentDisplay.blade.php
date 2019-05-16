@@ -27,8 +27,8 @@
             <!-- <table class="table table-striped table-condensed">
                     <tr>
                         <td>     -->
-                <a data-scroll-to="#main_smc"
-                data-scroll-focus="#main_smc"
+                <a data-scroll-to="body"
+                data-scroll-focus="body"
                 data-scroll-speed="400"
                 data-scroll-offset="-50" class="content_link" sid="{{ $smcArticle->id }}"  href="/pre_1992_legislation/smc-content/{{ $smcArticle->id }}">
                 <li style="list-style: none;">{{ $smcArticle->section }}</li>

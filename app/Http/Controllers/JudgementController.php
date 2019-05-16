@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\SupremeCourtJudgement;
 use App\HighCourtJudgement;
+use App\CourtOfAppealJudgement;
+use App\CircuitCourtJudgement;
+use App\DistrictCourtJudgement;
+use App\InternationalCasesjudgement;
 
 
 class JudgementController extends Controller
@@ -13,11 +17,11 @@ class JudgementController extends Controller
     public function index(){
         $supremeCourts = SupremeCourtJudgement::all();
         $highCourts = HighCourtJudgement::all();
-        // $courtOfAppeal =
-        // $circuitCourt = 
-        // $districtCourt =
-        // $internationalCases =
-        return view('law_judgement.index', compact('supremeCourts', 'highCourts'));
+        $courtOfAppeals = CourtOfAppealJudgement::all();
+        $circuitCourts = CircuitCourtJudgement::all();
+        $districtCourts = DistrictCourtJudgement::all();
+        $internationalCases = InternationalCasesjudgement::all();
+        return view('law_judgement.index', compact('supremeCourts', 'highCourts', 'circuitCourts','courtOfAppeals', 'districtCourts', 'internationalCases'));
     }
 
     //SUPREME COURT
@@ -55,54 +59,72 @@ class JudgementController extends Controller
     }
 
 
+    //COURT OF APPEAL
+    public function court_of_appeal(){
+        $courtOfAppeals = CourtOfAppealJudgement::all();
+        return view('law_judgement.court_of_appeal', compact('courtOfAppeals'));
+    }
+
+    public function court_of_appeal_case($id){
+        $courtOfAppeal = CourtOfAppealJudgement::find(['id' => $id])->toArray()[0];
+        $courtOfAppeals = CourtOfAppealJudgement::all();
+        return view('law_judgement.court_of_appeal_case', compact('courtOfAppeal','courtOfAppeals'));
+    }
+
+    public function court_of_appeal_case_view($id){
+        $courtOfAppeal = CourtOfAppealJudgement::find(['id' => $id])->toArray()[0];
+        return view('law_judgement.court_of_appeal_case_view', compact('courtOfAppeal'));
+    }
+
+    //CIRCUIT COURT
+    public function circuit_court(){
+        $circuitCourts = CircuitCourtJudgement::all();
+        return view('law_judgement.circuit_court', compact('circuitCourts'));
+    }
+
+    public function circuit_court_case($id){
+        $circuitCourt = CircuitCourtJudgement::find(['id' => $id])->toArray()[0];
+        $circuitCourts = CircuitCourtJudgement::all();
+        return view('law_judgement.circuit_court_case', compact('circuitCourt','circuitCourts'));
+    }
+
+    public function circuit_court_case_view($id){
+        $circuitCourt = CircuitCourtJudgement::find(['id' => $id])->toArray()[0];
+        return view('law_judgement.circuit_court_case_view', compact('circuitCourt'));
+    }
 
 
+    //DISTRICT COURT
+    public function district_court(){
+        $districtCourts = DistrictCourtJudgement::all();
+        return view('law_judgement.district_court', compact('districtCourts'));
+    }
 
+    public function district_court_case($id){
+        $districtCourt = DistrictCourtJudgement::find(['id' => $id])->toArray()[0];
+        $districtCourts = DistrictCourtJudgement::all();
+        return view('law_judgement.district_court_case', compact('districtCourt','districtCourts'));
+    }
 
+    public function district_court_case_view($id){
+        $districtCourt = DistrictCourtJudgement::find(['id' => $id])->toArray()[0];
+        return view('law_judgement.district_court_case_view', compact('districtCourt'));
+    }
 
+    //INTERNATIONAL CASES
+    public function international_cases(){
+        $internationalCases = InternationalCasesjudgement::all();
+        return view('law_judgement.international_cases', compact('internationalCases'));
+    }
 
+    public function international_case_title($id){
+        $internationalCase = InternationalCasesjudgement::find(['id' => $id])->toArray()[0];
+        $internationalCases = InternationalCasesjudgement::all();
+        return view('law_judgement.international_cases_title', compact('internationalCase','internationalCases'));
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // public function supreme_court(){
-    //     return view('nav_judgement.supreme_court');
-    // }
-
-    // public function high_court(){
-    //     return view('nav_judgement.high_court');
-    // }
-
-    // public function court_of_appeal(){
-    //     return view('nav_judgement.court_of_appeal');
-    // }
-
-    // public function circuit_court(){
-    //     return view('nav_judgement.circuit_court');
-    // }
-
-    // public function district_court(){
-    //     return view('nav_judgement.district_court');
-    // }
-
-    // public function international_cases(){
-    //     return view('nav_judgement.international_cases');
-    // }
+    public function international_cases_view($id){
+        $internationalCase = InternationalCasesjudgement::find(['id' => $id])->toArray()[0];
+        return view('law_judgement.international_cases_view', compact('internationalCase'));
+    }
 }

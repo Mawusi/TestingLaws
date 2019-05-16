@@ -27,8 +27,8 @@
             <!-- <table class="table table-striped table-condensed">
                     <tr>
                         <td>     -->
-                <a data-scroll-to="#main_pndc"
-                data-scroll-focus="#main_pndc"
+                <a data-scroll-to="body"
+                data-scroll-focus="body"
                 data-scroll-speed="400"
                 data-scroll-offset="-50" class="content_link" sid="{{ $pndcArticle->id }}"  href="/pre_1992_legislation/pndc-content/{{ $pndcArticle->id }}">
                 <li style="list-style: none;">{{ $pndcArticle->section }}</li>

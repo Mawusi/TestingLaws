@@ -15,16 +15,17 @@
                     <table class="table table-striped table-condensed" id="datatable">
                         <thead>
                             <tr>
-                                <th>All Laws Judgements</th>
+                                <th>All Circuit Court Cases</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @include('law_judgement.index_supreme')
-                            @include('law_judgement.index_high')
-                            @include('law_judgement.index_circuit_court')
-                            @include('law_judgement.index_court_of_appeal')
-                            @include('law_judgement.index_district_court')
-                            @include('law_judgement.index_international_cases')
+                            @foreach($circuitCourts as $circuitCourt)
+                                <tr>
+                                    <td>
+                                        <a href="/judgement/circuit-court-case-title/{{ $circuitCourt->id}}"><li style="list-style: none;">{{ $circuitCourt->case_title }}</li></a>
+                                    </td>   
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

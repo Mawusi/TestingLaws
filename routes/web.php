@@ -126,16 +126,32 @@ Route::get('/judgement','JudgementController@index');
 	Route::get('/judgement/supreme_court','JudgementController@supreme_court');
 	Route::get('/judgement/supreme-court-case-title/{id}','JudgementController@supreme_court_case');
 	Route::get('/judgement/supreme-court-case-view/{id}','JudgementController@supreme_court_case_view');
+
 	//High Court
 	Route::get('/judgement/high_court','JudgementController@high_court');
 	Route::get('/judgement/high-court-case-title/{id}','JudgementController@high_court_case');
 	Route::get('/judgement/high-court-case-view/{id}','JudgementController@high_court_case_view');
 
+	//Court of Appeal
+	Route::get('/judgement/court_of_appeal','JudgementController@court_of_appeal');
+	Route::get('/judgement/court-of-appeal-case-title/{id}','JudgementController@court_of_appeal_case');
+	Route::get('/judgement/court-of-appeal-case-view/{id}','JudgementController@court_of_appeal_case_view');
 
-Route::get('/judgement/court_of_appeal','JudgementController@court_of_appeal');
-Route::get('/judgement/circuit_court','JudgementController@circuit_court');
-Route::get('/judgement/district_court','JudgementController@district_court');
-Route::get('/judgement/international_cases','JudgementController@international_cases');
+	//Circuit Court
+	Route::get('/judgement/circuit_court','JudgementController@circuit_court');
+	Route::get('/judgement/circuit-court-case-title/{id}','JudgementController@circuit_court_case');
+	Route::get('/judgement/circuit-court-case-view/{id}','JudgementController@circuit_court_case_view');
+
+	//District Court
+	Route::get('/judgement/district_court','JudgementController@district_court');
+	Route::get('/judgement/district-court-case-title/{id}','JudgementController@district_court_case');
+	Route::get('/judgement/district-court-case-view/{id}','JudgementController@district_court_case_view');
+
+	//International Cases
+	Route::get('/judgement/international_cases','JudgementController@international_cases');
+	Route::get('/judgement/international-case-title/{id}','JudgementController@international_case_title');
+	Route::get('/judgement/international-case-view/{id}','JudgementController@international_cases_view');
+
 
 //Forum routes
 Route::get('/forum','ForumController@index');

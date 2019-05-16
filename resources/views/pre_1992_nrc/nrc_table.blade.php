@@ -58,7 +58,7 @@
 
 @section('content')
 
-@include('layouts.nrc_decree')
+@include('layouts.general_pre_1992_tab')
 
 <div class="container-fluid" style="margin-bottom: 5em;"> 
 
@@ -67,18 +67,9 @@
         <li class="active">
             <a href="#tableOfContentTab" data-toggle="tab">Table of Contents</a>
         </li>
-        <li>
+        <li class="tabPanedHide_acts_content">
             <a href="#contentTab" data-toggle="tab">Contents</a>
-        </li> 
-        {{-- <li>
-                <a href="#amendmentsTab" data-toggle="tab">Amendments</a>
-            </li>
-            <li>
-                <a href="#regulationTab" data-toggle="tab">Regulations</a>
-            </li>
-            <li>
-                <a href="#memorandumTab" data-toggle="tab">Memorandum</a>
-            </li>  --}}   
+        </li>  
     </ul>
 
     {{-- tab panes content --}}
@@ -90,11 +81,8 @@
             <div class="row">
                 <div class="col-md-6">
                    <h5><b>{{ $nrcDecree['title'] }}</b></h5>
-                   <hr><hr>
-                   <a data-scroll-to="#main_nrc"
-                      data-scroll-focus="#main_nrc"
-                      data-scroll-speed="400"
-                      data-scroll-offset="-50" class="preamble_link" id="preamble_link_toggle" href="/pre_1992_legislation/nrc-preamble/{{ $nrcDecree['id'] }}">
+                   <hr>
+                   <a class="preamble_link" id="preamble_link_toggle" href="/pre_1992_legislation/nrc-preamble/{{ $nrcDecree['id'] }}">
                       <p>Introductory Text</p>
                    </a>
                    
@@ -115,7 +103,7 @@
         {{-- Contents --}}
         <div id="contentTab" class="tab-pane fade">
           <div class="row">
-              <div class="col-md-8 table-wrapper-scroll-display">
+              <div class="col-md-10 table-wrapper-scroll-display">
                   <div id="display_content"></div>
                   <div id="display_preamble"></div>
                   <div id="display_view_all_section"></div>
@@ -124,7 +112,7 @@
           </div>   
 
           <div class="row show">
-            <div class="pager col-md-8 col-md-offset-6">
+            <div class="pager col-md-10 col-md-offset-6">
               <ul class="pager">
                   <li><a href="#" id="previous_content_reg">Previous</a></li>
                   <li><a href="#" id="next_content_reg">Next</a></li>

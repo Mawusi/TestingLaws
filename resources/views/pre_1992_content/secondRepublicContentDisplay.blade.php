@@ -27,8 +27,8 @@
             <!-- <table class="table table-striped table-condensed">
                     <tr>
                         <td>     -->
-                <a data-scroll-to="#main_second_republic"
-                data-scroll-focus="#main_second_republic"
+                <a data-scroll-to="body"
+                data-scroll-focus="body"
                 data-scroll-speed="400"
                 data-scroll-offset="-50" class="content_link" sid="{{ $secondArticle->id }}"  href="/pre_1992_legislation/second-republic-content/{{ $secondArticle->id }}">
                 <li style="list-style: none;">{{ $secondArticle->section }}</li>

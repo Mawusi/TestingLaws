@@ -27,8 +27,8 @@
             <!-- <table class="table table-striped table-condensed">
                     <tr>
                         <td>     -->
-                <a data-scroll-to="#main_nlc"
-                data-scroll-focus="#main_nlc"
+                <a data-scroll-to="body"
+                data-scroll-focus="body"
                 data-scroll-speed="400"
                 data-scroll-offset="-50" class="content_link" sid="{{ $nlcArticle->id }}"  href="/pre_1992_legislation/nlc-content/{{ $nlcArticle->id }}">
                 <li style="list-style: none;">{{ $nlcArticle->section }}</li>

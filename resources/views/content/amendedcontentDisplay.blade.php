@@ -24,8 +24,8 @@ if ($oldpart !== $amendedContent->part){
 <?php }
                     $oldpart = $amendedContent->part; ?>
         
-            <a data-scroll-to="#main_amend"
-               data-scroll-focus="#main_amend"
+            <a data-scroll-to="body"
+               data-scroll-focus="body"
                data-scroll-speed="400"
                data-scroll-offset="-50" class="content_link" href="/post_1992_legislation/amended-act-content/{{ $amendedContent->id }}"><li style="list-style: none;">{{ $amendedContent->section }}</li></a>
 {{--    </div>

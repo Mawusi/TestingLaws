@@ -60,36 +60,24 @@
 
 @include('layouts.general_law_judgement_tab')
 
-{{--
-<div class="content">
-        <p>{!! $supremeCourts['content'] !!}</p>
-</div>
-
-<div class="container">
-        <p>{!! $supremeCourts['content'] !!}</p>
-</div>
-
-<div class="container-fluid">
-        <p>{!! $supremeCourts['content'] !!}</p>
-</div>
---}}
-<div class="container-fluid"><span style="color:red;">Supreme Court Cases</span> / <b>{{ $supremeCourt['case_title'] }}</b></div>
+<div class="container-fluid"><span style="color:red;">Court of Appeal Cases</span> / <b>{{ $courtOfAppeal['case_title'] }}</b></div>
     <div class="container-fluid">
         <div class="row content">
             <div class="col-md-10 judgement_display">
                 <div id="display_content">
                     <div class="header_only">
-                        <h4><b>{{ $supremeCourt['case_title'] }}</b></h4>
+                        <h4><b>{{ $courtOfAppeal['case_title'] }}</b></h4>
                     </div>
                     <div class="content">	
-                        <p>{!! $supremeCourt['content'] !!}</p> 
+                        <p>{!! $courtOfAppeal['content'] !!}</p> 
                     </div>
-                </div> 
-                <div id="display_view_all_section"></div>   
+                </div>
+                <div id="display_view_all_section"></div>
             </div>
-                @include('law_judgement.supreme_container_plain')
+                @include('law_judgement.court_of_appeal_container_plain')
         </div>
-    </div         
+    </div   
+    
     
 
 @endsection

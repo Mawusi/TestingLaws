@@ -59,7 +59,7 @@
 @section('content')
 
 @include('layouts.general_law_judgement_tab')
-
+<div class="container-fluid"><span style="color:red;">High Court Cases</span> / <b>{{ $highCourt['case_title'] }}</b></div>
     <div class="container-fluid">
         <div class="row content">
             <div class="col-md-10 judgement_display">

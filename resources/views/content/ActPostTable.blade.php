@@ -107,7 +107,6 @@
 
             <!-- ACTS TABLE OF CONTENT -->
             <div id="tableOfContentTab" class="tab-pane fade in active">
-
                 <div class="row">
                     <div class="col-md-6">
                         <h5><b>{{ $myAct['title'] }}</b></h5>
@@ -143,7 +142,7 @@
 
             <!-- ACTS CONTENTS -->
             <div id="contentTab" class="tab-pane fade">
-                <div class="row" style="margin-bottom: 0.1em;">
+                <div class="row">
                      <div class="col-md-10 table-wrapper-scroll-display">
                         <div id="display_content"></div>
                         <div id="display_preamble"></div>
@@ -166,7 +165,7 @@
 
             <!-- ALL AMENDMENTS LISTS -->
             <div id="all_amendmentsTab" class="tab-pane fade">
-                <div class="row" style="margin-top: 1em">
+                <div class="row">
                         <div class="col-md-6">
                             <div id="all_amendments" class="amended_act_toggle"></div>
                         </div>
@@ -176,7 +175,7 @@
 
             <!-- AMENDMENTS TABLE OF CONTENTS -->
             <div id="amended_table_of_Content_Tab" class="tab-pane fade">
-                <div class="row" style="margin-top: 1em">
+                <div class="row">
                     <div class="col-md-6">
                     <div id="amended_table_of_content" class="amended_act_toggle_content"></div>   
                     </div>
@@ -187,7 +186,7 @@
             <!-- AMENDMENTS CONTENT -->
             <div id="amendmentcontentTab" class="tab-pane fade">
                 <div class="row">
-                    <div class="col-md-8 table-wrapper-scroll-display">
+                    <div class="col-md-10 table-wrapper-scroll-display">
                         <div id="single_preamble_amended_content"></div>
                         <div id="single_amended_content"></div>
                         <div id="single_view_all_sections_amend"></div> 
@@ -195,20 +194,20 @@
                     
                         <div id="single_container_details_amend"></div>
 
-                        {{-- ADVERTISEMENT --}}
+                        {{-- ADVERTISEMENT
                         <div class="col-md-2">
                             <div class="panel panel-default">
                                 <div class="panel-heading"><h3 class="panel-title">Advertisement</h3></div>
                                 <div class="panel-body">
-                                    <div class="embed-responsive embed-responsive-4by3">{{--<iframe width="420" height="345" src="https://www.youtube"></iframe>--}}</div>        
+                                    <div class="embed-responsive embed-responsive-4by3">iframe width="420" height="345" src="https://www.youtube"></iframe></div>        
                                 </div>
                             </div>
-                        </div>
+                        </div>--}}
                 </div>
 
                 <!-- NEXT AND PREVIOUS -->
                 <div class="row show">
-                    <div class="pager col-md-8 col-md-offset-6">
+                    <div class="pager col-md-10 col-md-offset-6">
                      <ul class="pager">
                         <li><a href="#" id="previous_content_act">Previous</a></li>
                         <li><a href="#" id="next_content_act">Next</a></li>
@@ -221,7 +220,7 @@
 
             <!--ALL REGULATION LIST -->
             <div id="all_regulationsTab" class="tab-pane fade">
-                <div class="row" style="margin-top: 1em">
+                <div class="row">
                      <div class="col-md-6">
                         <div id="all_regulations" class="regulation_act_toggle"></div>  
                     </div>
@@ -231,7 +230,7 @@
 
             <!-- REGULATIONS TABLE OF CONTENTS -->
             <div id="regulated_table_of_Content_Tab" class="tab-pane fade">
-                <div class="row" style="margin-top: 1em">
+                <div class="row">
                         <div class="col-md-6">
                         <div id="regulated_table_of_content" class="regulation_act_toggle_content"></div>   
                         </div>
@@ -243,7 +242,7 @@
             <!-- REGULATIONS CONTENTS -->
             <div id="regulatedcontentTab" class="tab-pane fade">
                 <div class="row">
-                    <div class="col-md-8 table-wrapper-scroll-display">
+                    <div class="col-md-10 table-wrapper-scroll-display">
                         <div id="single_preamble_regulation_content"></div>
                         <div id="single_regulation_content"></div>
                         <div id="single_view_all_sections_regulation"></div> 
@@ -251,20 +250,20 @@
                     
                         <div id="single_container_details_regulation"></div>
 
-                        {{-- ADVERTISEMENT --}}
+                        {{-- ADVERTISEMENT
                         <div class="col-md-2">
                             <div class="panel panel-default">
                                 <div class="panel-heading"><h3 class="panel-title">Advertisement</h3></div>
                                 <div class="panel-body">
-                                    <div class="embed-responsive embed-responsive-4by3">{{--<iframe width="420" height="345" src="https://www.youtube"></iframe>--}}</div>        
+                                    <div class="embed-responsive embed-responsive-4by3"><iframe width="420" height="345" src="https://www.youtube"></iframe></div>        
                                 </div>
                             </div>
-                        </div>
+                        </div>--}}
                 </div>
 
                 <!-- NEXT AND PREVIOUS -->
                 <div class="row show">
-                    <div class="pager col-md-8 col-md-offset-6">
+                    <div class="pager col-md-10 col-md-offset-6">
                      <ul class="pager">
                         <li><a href="#" id="previous_content_act">Previous</a></li>
                         <li><a href="#" id="next_content_act">Next</a></li>

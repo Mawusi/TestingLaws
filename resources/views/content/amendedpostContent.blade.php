@@ -1,10 +1,4 @@
 <div style="margin-top: 0.1em;">
-
-    {{-- <div class="top-container">
-      <h5><b>LAWSGHANA</b></h5>
-    </div> --}}
-
-
     <div class="header">
         {{-- <h5><b>LAWSGHANA</b></h5> --}}
         <h4><b>{{ $myContent['section'] }}</b></h4>
@@ -16,10 +10,7 @@
 </div>
 
 
-{{-- <div>
-    <h3><b>{{ $myContent['section'] }}</b></h3>
-    <p>{!! $myContent['content'] !!}</p>  
-</div> --}}
+
 
 
     

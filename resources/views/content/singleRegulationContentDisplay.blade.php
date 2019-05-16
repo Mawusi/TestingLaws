@@ -24,8 +24,8 @@ if ($oldpart !== $regulationContent->part){
 <?php }
                     $oldpart = $regulationContent->part; ?>
         
-            <a data-scroll-to="#main_act"
-               data-scroll-focus="#main_act"
+            <a data-scroll-to="body"
+               data-scroll-focus="body"
                data-scroll-speed="400"
                data-scroll-offset="-50" class="sinlge_regulation_act_content_link" href="/post_1992_legislation/regulation-content/{{ $regulationContent->id }}"><li style="list-style: none;">{{ $regulationContent->section }}</li></a>
 {{--    </div>

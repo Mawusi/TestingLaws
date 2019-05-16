@@ -30,7 +30,10 @@
             <!-- <table class="table table-striped table-condensed">
                 <tr>
                     <td>     -->
-                        <a class="content_link" sid="{{ $myArticle->id }}" href="/post_1992_legislation/act-content/{{ $myArticle->id }}">
+                        <a data-scroll-to="body"
+                           data-scroll-focus="body"
+                           data-scroll-speed="400"
+                           data-scroll-offset="-50" class="content_link" sid="{{ $myArticle->id }}" href="/post_1992_legislation/act-content/{{ $myArticle->id }}">
                             <li style="list-style: none;">{{ $myArticle->section }}</li>
                         </a>
                     <!-- </td>

@@ -27,8 +27,8 @@
             <!-- <table class="table table-striped table-condensed">
                     <tr>
                         <td>     -->
-                <a data-scroll-to="#main_regulation"
-                data-scroll-focus="#main_regulation"
+                <a data-scroll-to="body"
+                data-scroll-focus="body"
                 data-scroll-speed="400"
                 data-scroll-offset="-50" class="content_link" sid="{{ $regulationContent->id }}"  href="/post_1992_legislation/regulation-content/{{ $regulationContent->id }}">
                 <li style="list-style: none;">{{ $regulationContent->section }}</li>
