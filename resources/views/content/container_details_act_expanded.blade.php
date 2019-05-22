@@ -3,11 +3,11 @@
 <div class="col-md-2"> 
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Views and Downloads</h3>
+        <h3 class="panel-title">Print and Downloads</h3>
       </div>
       <div class="panel-body">
 
-        {{-- View all sections --}}
+        {{-- View all sections
         <div class="btn-group">
               <button type="button" class="btn btn-default">All Acts Sections</button>
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -23,7 +23,7 @@
               </ul>
         </div>
         <hr>
-
+        --}}
         {{-- Downloads 
         <label>Downloads</label>
             <a href="/article-pdf/{{ $myArticle->id }}"><li style="list-style: none;">Current Section(PDF)</li></a>
@@ -31,9 +31,9 @@
         <hr>
         --}}
         {{-- Print Options --}}
-        <label>Print Options</label>
-            <a href=""><li style="list-style: none;">Whole Act</li></a>
-            <a href=""><li style="list-style: none;">Current Section(PDF)</li></a>
+        <label>Print & Download Options</label>
+            <a href=""><li style="list-style: none;">Print Whole Act</li></a>
+            <a href=""><li style="list-style: none;">Download Whole Act (PDF)</li></a>
         <hr>
         
             

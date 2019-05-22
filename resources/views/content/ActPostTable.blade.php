@@ -1,4 +1,4 @@
-
+    
 @extends('layouts.main')
 
 @section('assets')
@@ -61,12 +61,18 @@
     <div class="container-fluid" style="margin-bottom: 5em;"> 
         {{-- Nav tabs --}}
         <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+
             <!-- Acts -->
             <li class="active">
                 <a href="#tableOfContentTab" data-toggle="tab">Acts Table of Contents</a>
             </li>
             <li class="tabPanedHide_acts_content">
                 <a href="#contentTab" data-toggle="tab">Acts Content</a>
+            </li>
+
+            <!-- Expanded View -->
+            <li class="tabPanedHide_expanded_view">
+                <a href="#expandedTab" data-toggle="tab">Expanded View</a>
             </li>
 
 
@@ -122,6 +128,7 @@
                            data-scroll-offset="-50" 
                            class="preamble_link" id="preamble_link_toggle" href="/post_1992_legislation/acts-preamble/{{ $myAct['id'] }}"><p>Introductory Text</p>
                         </a> --}}
+
                         <a class="preamble_link" id="preamble_link_toggle" href="/post_1992_legislation/acts-preamble/{{ $myAct['id'] }}"><p>Introductory Text</p>
                         </a>
                             <!-- Parts and Sections Display -->
@@ -134,7 +141,7 @@
                     </div>
 
                             <!-- Downloads and Advertisement -->
-                            @include('content.container_plain')
+                            @include('content.container_plain_post')
                 </div>
 
             </div>
@@ -146,12 +153,10 @@
                      <div class="col-md-10 table-wrapper-scroll-display">
                         <div id="display_content"></div>
                         <div id="display_preamble"></div>
-                        <div id="display_view_all_section"></div>  
+                        <div id="display_view_all_section"></div> 
                     </div>
-                    
                     @include('content.container_details_act')
                 </div>
-
                 <div class="row show">
                     <div class="pager col-md-10 col-md-offset-6">
                      <ul class="pager">
@@ -160,8 +165,28 @@
                      </ul>
                     </div>
                 </div>
-
             </div>
+
+            <!-- ACTS EXPANDED CONTENTS -->
+            <div id="expandedTab" class="tab-pane fade">
+                <div class="row">
+                     <div class="col-md-10 expanded_view">
+                        <div id="acts_expanded_view"></div> 
+                    </div>
+                    @include('content.container_details_act_expanded')
+                </div>
+                {{--
+                <div class="row show">
+                    <div class="pager col-md-10 col-md-offset-6">
+                     <ul class="pager">
+                        <li><a href="#" id="previous_content_act">Previous</a></li>
+                        <li><a href="#" id="next_content_act">Next</a></li>
+                     </ul>
+                    </div>
+                </div>--}}
+            </div>
+
+            
 
             <!-- ALL AMENDMENTS LISTS -->
             <div id="all_amendmentsTab" class="tab-pane fade">

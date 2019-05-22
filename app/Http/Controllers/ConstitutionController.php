@@ -3,12 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\GhanaConstitutionAct;
+use App\GhanaConstitutionArticle;
+
 
 class ConstitutionController extends Controller
 {
-    //
-    public function index(){
-        return view('constitution.constitution');
+    
+    public function index($id){
+        $ghana_act = GhanaConstitutionAct::find(['id' => $id])->toArray()[0];
+        $constitutionContent1     = GhanaConstitutionArticle::all();  
+        $unique                   = $constitutionContent1->sortBy('chapter')->sortBy('priority');
+        $constitutionContents     = $unique;
+        return view('constitution.ghana_constitution_table', compact('ghana_act', 'constitutionContents'));
+    }
+
+    public function constitution_preamble($id){
+        $ghana_act = GhanaConstitutionAct::find(['id' => $id])->toArray()[0]; 
+        return view('constitution.constitution_preamble', compact('ghana_act'));
+    }
+
+    public function constitution_content($id){
+        $constitutionContent = GhanaConstitutionArticle::find(['id' => $id])->toArray()[0];
+        return view('constitution.constitution_content', compact('constitutionContent'));
     }
 
     public function ghana(){

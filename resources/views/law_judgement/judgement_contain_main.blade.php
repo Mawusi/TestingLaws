@@ -7,35 +7,17 @@
 		  </div>
 		  <div class="panel-body">
 		    <label>By Year:</label>
-		    <input class="form-control allPost1992_filter_year" id="myInput" type="text" aria-label="Search" placeholder="eg. 2015...">
+		    <input class="form-control judgement_filter_year" id="myInput" type="text" aria-label="Search" placeholder="eg. 2015...">
 		    <hr>
-
-		    {{-- <label>By Categories:</label>
-			<select class="form-control browser-default custom-select" id="filter_category" style="width: 150px;">
-				<option selected value="">Select Category</option>
-				<option value="Education">Education</option>
-				<option value="Social">Social</option>
-				<option value="Hospital">Hospital</option>
-				<option value="School">School</option>
-			</select> --}}
-
 			<label>By Categories:</label>
-			<select class="form-control browser-default custom-select" id="filter_category" style="width: 154px;">
+			<select class="form-control browser-default custom-select judgement_filter_category" style="width: 154px;">
 				<option selected value="">Select Category</option>
-				{{--
 				@foreach($categories as $key_categories)
 				<option value="{{ $key_categories->id }}">{{ $key_categories->name }}</option>
-				@endforeach
-				--}}
+				@endforeach	
 			</select>
-
 		    <hr>
-
-		    {{-- <label>By Name:</label>
-		    <input class="form-control title" id="myInput" type="text" aria-label="Search">
-		    <hr> --}}
-
-		    <input class="btn btn-primary" type="button" name="go" value="Go" id="allPost1992_filter">
+		    <input class="btn btn-primary" type="button" name="go" value="Go" id="all_judgement">
 
 		  </div>
 		</div>

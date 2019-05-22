@@ -18,28 +18,29 @@ class Post1992Controller extends Controller
         $allPosts       = Post1992LegislationAct::all();
         $allPostsAmends = AmendedTitle::all();
         $allRegulations = RegulationTitle::all();
-        //$categories     = Post1992Category::all();
-        return view('main_pages.post_legislation', compact('allPosts', 'allPostsAmends', 'allRegulations'));
+        $categories     = Post1992Category::all();
+        return view('main_pages.post_legislation', compact('allPosts', 'allPostsAmends', 'allRegulations', 'categories'));
     }
 
     // Filtering
-    // public function index_filter($year){
-    //     $bool = false;
-    //     $where = array();
-    //     if($year != "0"){   
-    //         $where['year'] = $year;
-    //         $bool = true;
-    //     }
-        // if($category != "0"){   
-        //     $where['post1992_category_name'] = $category;
-        //     $bool = true;
-        // }
+    public function index_filter($year, $category){
+        $bool = false;
+        $where = array();
+        if($year != "0"){   
+            $where['year'] = $year;
+            $bool = true;
+        }
+        if($category != "0"){   
+            $where['post1992_category_name'] = $category;
+            $bool = true;
+        }
 
-    //     $allPosts       = ($bool)?Post1992LegislationAct::where($where)->get():Post1992LegislationAct::all();
-    //     $allPostsAmends = ($bool)?AmendedTitle::where($where)->get():AmendedTitle::all();
-    //     $allRegulations = ($bool)?RegulationTitle::where($where)->get():RegulationTitle::all();
-    //     return view('main_pages.post_legislation', compact('allPosts', 'allPostsAmends', 'allRegulations'));
-    // }
+        $allPosts       = ($bool)?Post1992LegislationAct::where($where)->get():Post1992LegislationAct::all();
+        $allPostsAmends = ($bool)?AmendedTitle::where($where)->get():AmendedTitle::all();
+        $allRegulations = ($bool)?RegulationTitle::where($where)->get():RegulationTitle::all();
+        $categories     = Post1992Category::all();
+        return view('main_pages.post_legislation', compact('allPosts', 'allPostsAmends', 'allRegulations', 'categories'));
+    }
     
     public function act_title($id){
         $myAct              = Post1992LegislationAct::find(['id' => $id])->toArray()[0];
@@ -71,24 +72,35 @@ class Post1992Controller extends Controller
         return view('content.postContent', compact('myContent', 'myAct'));
     }
 
+    public function expanded_view($id){
+        $myAct = Post1992LegislationAct::find(['id' => $id])->toArray()[0];
+        return view('content.expandedView', compact('myAct'));
+    }
+
     
     //ALL ACTS OF PARLIAMENT
     public function actsOfParliament($id = 1){
         $myActsOfParliaments    = Post1992LegislationAct::where(['post1992_group_name' => $id])->get();
-        return view('content.actsOfParliament', compact('myActsOfParliaments'));
+        $categories     = Post1992Category::all();
+        return view('content.actsOfParliament', compact('myActsOfParliaments', 'categories'));
     }
 
     // Filtering
-    public function filter_actsOfParliament($id = 1, $year){
+    public function filter_actsOfParliament($id, $year, $category){
+    
         $bool = false;
         $where = array();
         if($year != "0"){   
             $where['year'] = $year;
             $bool = true;
         }
-
+        if($category != "0"){   
+            $where['post1992_category_name'] = $category;
+            $bool = true;
+        }
         $myActsOfParliaments = ($bool)?Post1992LegislationAct::where($where)->get():Post1992LegislationAct::all();
-        return view('content.actsOfParliament', compact('myActsOfParliaments'));
+        $categories     = Post1992Category::all();
+        return view('content.actsOfParliament', compact('myActsOfParliaments', 'categories'));
     }
 
 
@@ -112,7 +124,7 @@ class Post1992Controller extends Controller
             $bool = true;
         }
         $allPostsAmends = ($bool)?AmendedTitle::where($where)->get():AmendedTitle::all();
-        $categories     = ($bool)?AmendedTitle::where($where)->get():AmendedTitle::all();
+        $categories     = Post1992Category::all();
         return view('content.amendments', compact('allPostsAmends', 'categories'));
     }
 
@@ -165,24 +177,25 @@ class Post1992Controller extends Controller
     //REGULATIONS
     public function regulations(){
         $allRegulations = RegulationTitle::all();
-        // $categories     = Post1992Category::all();
-        return view('content.regulations', compact('allRegulations'));
+        $categories     = Post1992Category::all();
+        return view('content.regulations', compact('allRegulations', 'categories'));
     }
 
     //Filtering
-    public function filter_regulations($year){
+    public function filter_regulations($year, $category){
         $bool = false;
          $where = array();
          if($year != "0"){   
              $where['year'] = $year;
              $bool = true;
          }
-         // if($category != "0"){   
-         //     $where['categories'] = $category;
-         //     $bool = true;
-         // }
+         if($category != "0"){   
+             $where['post1992_category_name'] = $category;
+             $bool = true;
+         }
          $allRegulations = ($bool)?RegulationTitle::where($where)->get():RegulationTitle::all();
-         return view('content.regulations', compact('allRegulations')); 
+         $categories     = Post1992Category::all();
+         return view('content.regulations', compact('allRegulations', 'categories')); 
      }
 
     public function regulation_title($id){

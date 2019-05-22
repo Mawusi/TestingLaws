@@ -9,7 +9,7 @@ use App\CourtOfAppealJudgement;
 use App\CircuitCourtJudgement;
 use App\DistrictCourtJudgement;
 use App\InternationalCasesjudgement;
-
+use App\LawJudgementCategory;
 
 class JudgementController extends Controller
 {
@@ -20,8 +20,31 @@ class JudgementController extends Controller
         $courtOfAppeals = CourtOfAppealJudgement::all();
         $circuitCourts = CircuitCourtJudgement::all();
         $districtCourts = DistrictCourtJudgement::all();
-        $internationalCases = InternationalCasesjudgement::all();
-        return view('law_judgement.index', compact('supremeCourts', 'highCourts', 'circuitCourts','courtOfAppeals', 'districtCourts', 'internationalCases'));
+        // $internationalCases = InternationalCasesjudgement::all();
+        $categories     = LawJudgementCategory::all();
+        return view('law_judgement.index', compact('supremeCourts', 'highCourts', 'circuitCourts','courtOfAppeals', 'districtCourts','categories'));
+    }
+
+    // Filtering
+    public function index_filter($year, $category){
+        $bool = false;
+        $where = array();
+        if($year != "0"){   
+            $where['year'] = $year;
+            $bool = true;
+        }
+        if($category != "0"){   
+            $where['law_judgement_category_name'] = $category;
+            $bool = true;
+        }
+
+        $supremeCourts       = ($bool)?SupremeCourtJudgement::where($where)->get():SupremeCourtJudgement::all();
+        $highCourts = ($bool)?HighCourtJudgement::where($where)->get():HighCourtJudgement::all();
+        $courtOfAppeals = ($bool)?CourtOfAppealJudgement::where($where)->get():CourtOfAppealJudgement::all();
+        $circuitCourts = ($bool)?CircuitCourtJudgement::where($where)->get():CircuitCourtJudgement::all();
+        $districtCourts = ($bool)?DistrictCourtJudgement::where($where)->get():DistrictCourtJudgement::all();
+        $categories     = LawJudgementCategory::all();
+        return view('law_judgement.index', compact('supremeCourts', 'highCourts', 'circuitCourts','courtOfAppeals', 'districtCourts','categories'));
     }
 
     //SUPREME COURT
@@ -29,17 +52,16 @@ class JudgementController extends Controller
         $supremeCourts = SupremeCourtJudgement::all();
         return view('law_judgement.supreme_court', compact('supremeCourts'));
     }
-
     public function supreme_court_case($id){
         $supremeCourt = SupremeCourtJudgement::find(['id' => $id])->toArray()[0];
         $supremeCourts = SupremeCourtJudgement::all();
         return view('law_judgement.supreme_court_case', compact('supremeCourt', 'supremeCourts'));
     }
-
     public function supreme_court_case_view($id){
         $supremeCourt = SupremeCourtJudgement::find(['id' => $id])->toArray()[0];
         return view('law_judgement.supreme_court_case_view', compact('supremeCourt'));
     }
+
 
     //HIGH COURT
     public function high_court(){

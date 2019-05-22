@@ -22,9 +22,8 @@
 			<label>By Categories:</label>
 			<select class="form-control browser-default custom-select amendment_filter_category" style="width: 154px;">
 				<option selected value="">Select Category</option>
-
-				@foreach($categories as $category)
-				<option value="{{ $category->name }}">{{ $category->name }}</option>
+				@foreach($categories as $key_categories)
+				<option value="{{ $key_categories->id }}">{{ $key_categories->name }}</option>
 				@endforeach
 			
 			</select>

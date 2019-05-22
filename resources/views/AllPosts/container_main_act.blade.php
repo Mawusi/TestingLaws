@@ -11,7 +11,7 @@
 		    <hr>
 
 		    {{-- <label>By Categories:</label>
-			<select class="form-control browser-default custom-select" id="filter_category" style="width: 150px;">
+			<select class="form-control browser-default custom-select act_filter_category" style="width: 150px;">
 				<option selected value="">Select Category</option>
 				<option value="Education">Education</option>
 				<option value="Social">Social</option>
@@ -20,21 +20,15 @@
 			</select> --}}
 
 			<label>By Categories:</label>
-			<select class="form-control browser-default custom-select" id="filter_category" style="width: 154px;">
+			<select class="form-control browser-default custom-select act_filter_category" style="width: 154px;">
 				<option selected value="">Select Category</option>
-
-				{{--
 				@foreach($categories as $key_categories)
-				<option value="{{ $key_categories->name }}">{{ $key_categories->name }}</option>
+				<option value="{{ $key_categories->id }}">{{ $key_categories->name }}</option>
 				@endforeach
-				--}}
+				
 			</select>
 
 		    <hr>
-
-		    {{-- <label>By Name:</label>
-		    <input class="form-control title" id="myInput" type="text" aria-label="Search">
-		    <hr> --}}
 
 		    <input class="btn btn-primary" type="button" name="go" value="Go" id="acts_of_parliament_filter">
 

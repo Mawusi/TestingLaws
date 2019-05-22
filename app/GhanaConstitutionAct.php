@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ConstitutionAct extends Model
+class GhanaConstitutionAct extends Model
 {
     //
 }

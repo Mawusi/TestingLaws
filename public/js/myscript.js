@@ -16,6 +16,8 @@ $(document).ready(function(){
 
   $('.tabPanedHide_acts_content').hide();
 
+  $('.tabPanedHide_expanded_view').hide();
+
     //TOGGLE ALL AMENDMENTS AND REGULATION UNDER AN ACT
     //For all amendments
    $('#all_amendments_link_toggle').click(function (e) {
@@ -450,6 +452,24 @@ $(document).ready(function(){
     //     xhr.send();
     // });
 
+    //EXPANDED VIEW
+    $('.expanded_link').click(function(e){
+        e.preventDefault();
+        var xhr = new XMLHttpRequest();
+        var link = $(this).attr("href");
+        xhr.open("GET", link, true);
+        xhr.onreadystatechange = function receiveUpdate(e) {
+            $("#acts_expanded_view").html(this.responseText);
+        }
+        xhr.send();
+    });
+    $('#expanded_link_toggle').click(function (e) {
+        e.preventDefault();
+        $('#tabs a[href="#expandedTab"]').tab('show');
+        $('.tabPanedHide_expanded_view').show();
+   });
+
+
     //GENERAL PREAMBLE LINK
     // General Preamble link: Click and go to Display Preamble at Content
     $('.preamble_link').click(function(e){
@@ -508,11 +528,50 @@ $(document).ready(function(){
     });
 
 
-    // FILTERING
+    // FILTERING FOR POST 1992 LEGISLATION
+    /* For all Post 1992 Legislation */
+    $('#allPost1992_filter').click(function(e){
+        e.preventDefault();
+        var year = $(".allPost1992_filter_year").val();
+        var category = $("#filter_category").val();
+        if(year === ""){
+            year = 0;
+        }
+        if(category === ""){
+             category = 0;
+        }        
+        window.location.href = '/post_1992_legislation/filter/'+year+'/'+category;
+    });
+    /* For the acts of parliament */
+    $('#acts_of_parliament_filter').click(function(e){
+        e.preventDefault();
+        var year = $(".acts_of_parliament_filter_year").val();
+        var id=1;
+        var category = $(".act_filter_category").val();
+        if(year === ""){
+            year = 0;
+        }
+        if(category === ""){
+             category = 0;
+        }
+        window.location.href = '/post_1992_legislation/acts_of_parliament/'+id+'/'+year+'/'+category;
+    });
+    /* For the regulation */
+    $('#regulation_filter').click(function(e){
+        e.preventDefault();
+        var year = $(".regulation_filter_year").val();
+        var category = $(".regulation_filter_category").val();
+        if(year === ""){
+            year = 0;
+        }
+        if(category === ""){
+             category = 0;
+        }
+        window.location.href = '/post_1992_legislation/regulations/'+year+'/'+category;
+    });
     /* For the amendment */
     $('#amendment_filter').click(function(e){
         e.preventDefault();
-
         var year = $(".amendment_filter_year").val();
         var category = $(".amendment_filter_category").val();
         if(year === ""){
@@ -521,65 +580,24 @@ $(document).ready(function(){
         if(category === ""){
              category = 0;
         }
-        // window.location.href = '/post_1992_legislation/amendments/'+year;
        window.location.href = '/post_1992_legislation/amendments/'+year+'/'+category;
-
-    });
-
-    /* For the regulation */
-    $('#regulation_filter').click(function(e){
-        e.preventDefault();
-
-        var year = $(".regulation_filter_year").val();
-        // var category = $("#filter_category").val();
-        if(year === ""){
-            year = 0;
-        }
-
-        // if(category === ""){
-        //      category = 0;
-        // }
-        window.location.href = '/post_1992_legislation/regulations/'+year;
-        // window.location.href = '/post_1992_legislation/regulations/'+year+'/'+category;
-    });
-
-    /* For the acts of parliament */
-    $('#acts_of_parliament_filter').click(function(e){
-        e.preventDefault();
-
-        var year = $(".acts_of_parliament_filter_year").val();
-        var id = 1;
-        // var category = $("#filter_category").val();
-        if(year === ""){
-            year = 0;
-        }
-        // if(category === ""){
-        //      category = 0;
-        // }
-        window.location.href = '/post_1992_legislation/acts_of_parliament/'+id+'/'+year;
-        // window.location.href = '/post_1992_legislation/acts_of_parliament/'+year+'/'+category;
-    });
-
-
-    /* For all Post 1992 Legislation */
-    $('#allPost1992_filter').click(function(e){
-        e.preventDefault();
-
-        var year = $(".allPost1992_filter_year").val();
-        // var category = $("#filter_category").val();
-
-        if(year === ""){
-            year = 0;
-        }
-        // if(category === ""){
-        //      category = 0;
-        // }
-        window.location.href = '/post_1992_legislation/'+year;
-        // window.location.href = '/post_1992_legislation/'+year+'/'+category;
-    });
-    
+    }); 
 });
 
+// FILTERING FOR LAW JUDGEMENTS
+    /* For all law judgements */
+    $('#all_judgement').click(function(e){
+        e.preventDefault();
+        var year = $(".judgement_filter_year").val();
+        var category = $(".judgement_filter_category").val();
+        if(year === ""){
+            year = 0;
+        }
+        if(category === ""){
+             category = 0;
+        }
+        window.location.href = '/judgement/filter/'+year+'/'+category;
+    });
 
 // PAGINATION FOR THE ACCORDION
 /* pagination plugin */

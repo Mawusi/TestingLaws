@@ -17,8 +17,10 @@ Route::get('/','PageController@index'); //Home Page
 
 
 //Constitution routes
-Route::get('/constitution', 'ConstitutionController@index');
-Route::get('/constitution/Ghana','ConstitutionController@ghana');
+Route::get('/constitution/{id}', 'ConstitutionController@index');
+Route::get('/constitution/constitution-preamble/{id}','ConstitutionController@constitution_preamble');
+Route::get('/constitution/constitution-content/{id}','ConstitutionController@constitution_content');
+
 Route::get('/constitution/Africa','ConstitutionController@africa');
 Route::get('/constitution/Europe','ConstitutionController@europe');
 Route::get('/constitution/Asia','ConstitutionController@asia');
@@ -71,14 +73,15 @@ Route::get('/pre_1992_legislation','Pre1992Controller@index');
 
 
 
-	//Post_1992 routes
+//Post_1992 routes
 Route::get('/post_1992_legislation','Post1992Controller@index');
-// Route::get('/post_1992_legislation/{year}','Post1992Controller@index_filter'); //index filtering
+Route::get('/post_1992_legislation/filter/{year}/{category}','Post1992Controller@index_filter'); //index filtering
 Route::get('/post_1992_legislation/act-title/{id}','Post1992Controller@act_title');
 Route::get('/post_1992_legislation/acts-preamble/{id}','Post1992Controller@acts_preamble');
 Route::get('/post_1992_legislation/act-content/{id}','Post1992Controller@content');
 Route::get('/post_1992_legislation/all-amended-acts/{id}','Post1992Controller@all_amended_acts');
 Route::get('/post_1992_legislation/all-regulated-acts/{id}','Post1992Controller@all_regulated_acts');
+Route::get('/post_1992_legislation/expanded-view/{id}','Post1992Controller@expanded_view');
 
 			//Route for PDF for Post Acts
 			Route::get('/Introductory_text/{id}', 'PdfController@introductory_text_pdf');
@@ -94,8 +97,6 @@ Route::get('/post_1992_legislation/all-regulated-acts/{id}','Post1992Controller@
 		   Route::get('/post_1992_legislation/acts-amended-preamble/{id}','Post1992Controller@acts_amended_preamble');
 		   Route::get('/post_1992_legislation/single-acts-amended-preamble/{id}','Post1992Controller@single_acts_amended_preamble');
 		   Route::get('/post_1992_legislation/single-container-details-amendments/{id}','Post1992Controller@single_container_details_amendedment');
-
-		   // Route::get('/post_1992_legislation/amendments/{year}','Post1992Controller@filter_amendments'); //Filtering amendments year
 		   Route::get('/post_1992_legislation/amendments/{year}/{category}','Post1992Controller@filter_amendments'); //Filtering amendments year and category
 		   Route::get('/post_1992_legislation/amended-act-content/{id}','Post1992Controller@amended_content');
 		   //---------------------------------------------------------------------------------------------------------------
@@ -105,7 +106,7 @@ Route::get('/post_1992_legislation/all-regulated-acts/{id}','Post1992Controller@
 		   Route::get('/post_1992_legislation/regulations','Post1992Controller@regulations');
 		   Route::get('/post_1992_legislation/regulation-title/{id}','Post1992Controller@regulation_title');
 		   Route::get('/post_1992_legislation/single-regulation-title/{id}','Post1992Controller@single_regulation_title');
-		   Route::get('/post_1992_legislation/regulations/{year}','Post1992Controller@filter_regulations'); //Filtering regulations year
+		   Route::get('/post_1992_legislation/regulations/{year}/{category}','Post1992Controller@filter_regulations'); //Filtering regulations year
 		   Route::get('/post_1992_legislation/regulation-preamble/{id}','Post1992Controller@regulation_preamble');
 		   Route::get('/post_1992_legislation/single-regulation-preamble/{id}','Post1992Controller@single_regulation_preamble');
 		   Route::get('/post_1992_legislation/single-container-details-regulation/{id}','Post1992Controller@single_container_details_regulation');
@@ -118,10 +119,12 @@ Route::get('/post_1992_legislation/all-regulated-acts/{id}','Post1992Controller@
 
 			// ACTS OF PARLIAMENT
 		   Route::get('/post_1992_legislation/acts_of_parliament/{id}','Post1992Controller@actsOfParliament');
-		   Route::get('/post_1992_legislation/acts_of_parliament/{id}/{year}','Post1992Controller@filter_actsOfParliament'); //Filtering acts of parliament year
+		   Route::get('/post_1992_legislation/acts_of_parliament/{id}/{year}/{category}','Post1992Controller@filter_actsOfParliament'); //Filtering acts of parliament year
 
 //Judgement routes
 Route::get('/judgement','JudgementController@index');
+Route::get('/judgement/filter/{year}/{category}','JudgementController@index_filter'); //index filtering
+
 	//Supreme Court
 	Route::get('/judgement/supreme_court','JudgementController@supreme_court');
 	Route::get('/judgement/supreme-court-case-title/{id}','JudgementController@supreme_court_case');

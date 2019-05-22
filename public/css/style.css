@@ -43,6 +43,12 @@ overflow-y: auto;
   overflow: scroll;
 }
 
+.expanded_view {
+  background-color: #eee;
+  height: 600px;
+  overflow: scroll;
+}
+
 .judgement_display {
   background-color: #eee;
   height: 650px;

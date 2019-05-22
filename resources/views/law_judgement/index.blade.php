@@ -24,12 +24,12 @@
                             @include('law_judgement.index_circuit_court')
                             @include('law_judgement.index_court_of_appeal')
                             @include('law_judgement.index_district_court')
-                            @include('law_judgement.index_international_cases')
+                            {{--@include('law_judgement.index_international_cases')--}}
                         </tbody>
                     </table>
                 </div>
             </div>
-                            @include('AllPosts.container_main_all')
+                            @include('law_judgement.judgement_contain_main')
         </div>
     </div>
 
