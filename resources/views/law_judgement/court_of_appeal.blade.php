@@ -16,6 +16,7 @@
                         <thead>
                             <tr>
                                 <th>All Court of Appeal Cases</th>
+                                <th>Year</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -23,7 +24,8 @@
                                 <tr>
                                     <td>
                                         <a href="/judgement/court-of-appeal-case-title/{{ $courtOfAppeal->id}}"><li style="list-style: none;">{{ $courtOfAppeal->case_title }}</li></a>
-                                    </td>   
+                                    </td> 
+                                    <td>{{ $courtOfAppeal->year }}</td>  
                                 </tr>
                             @endforeach
                         </tbody>

@@ -16,15 +16,32 @@
 Route::get('/','PageController@index'); //Home Page
 
 
-//Constitution routes
-Route::get('/constitution/{id}', 'ConstitutionController@index');
+//Constitution Ghana routes
+Route::get('/constitution/Ghana/{id}', 'ConstitutionController@constitution_table');
 Route::get('/constitution/constitution-preamble/{id}','ConstitutionController@constitution_preamble');
 Route::get('/constitution/constitution-content/{id}','ConstitutionController@constitution_content');
+Route::get('/constitution/expanded-view/{id}','ConstitutionController@expanded_view');
 
-Route::get('/constitution/Africa','ConstitutionController@africa');
-Route::get('/constitution/Europe','ConstitutionController@europe');
-Route::get('/constitution/Asia','ConstitutionController@asia');
-Route::get('/constitution/America','ConstitutionController@america');
+//Constitution Ghana Amended routes
+Route::get('/constitution/Ghana/Amended/{id}', 'ConstitutionController@constitution_amended_table');
+
+
+//Constitution Of All Continents routes
+Route::get('/constitution/all-countries','ConstitutionController@all_countries_constitution');
+Route::get('/constitution/all-countries/act-title/{id}','ConstitutionController@all_constitution_acts_title');
+
+//Constitution of Single Continents routes
+//Africa
+Route::get('/constitution/Africa/{id}','ConstitutionController@africa_constitution');
+//Asia
+Route::get('/constitution/Asia/{id}','ConstitutionController@asia_constitution');
+//Europe
+Route::get('/constitution/Europe/{id}','ConstitutionController@europe_constitution');
+//North America
+Route::get('/constitution/North_America/{id}','ConstitutionController@north_america_constitution');
+//South America
+Route::get('/constitution/South_America/{id}','ConstitutionController@south_america_constitution');
+
 
 //Pre_1992 routes
 Route::get('/pre_1992_legislation','Pre1992Controller@index');
@@ -122,8 +139,8 @@ Route::get('/post_1992_legislation/expanded-view/{id}','Post1992Controller@expan
 		   Route::get('/post_1992_legislation/acts_of_parliament/{id}/{year}/{category}','Post1992Controller@filter_actsOfParliament'); //Filtering acts of parliament year
 
 //Judgement routes
-Route::get('/judgement','JudgementController@index');
-Route::get('/judgement/filter/{year}/{category}','JudgementController@index_filter'); //index filtering
+Route::get('/judgement/Ghana','JudgementController@index');
+Route::get('/judgement/Ghana/filter/{year}/{category}','JudgementController@index_filter'); //index filtering
 
 	//Supreme Court
 	Route::get('/judgement/supreme_court','JudgementController@supreme_court');
@@ -153,7 +170,26 @@ Route::get('/judgement/filter/{year}/{category}','JudgementController@index_filt
 	//International Cases
 	Route::get('/judgement/international_cases','JudgementController@international_cases');
 	Route::get('/judgement/international-case-title/{id}','JudgementController@international_case_title');
+	
 	Route::get('/judgement/international-case-view/{id}','JudgementController@international_cases_view');
+
+	//All Countries
+	Route::get('/judgement/all-countries','JudgementController@all_countries_laws');
+	Route::get('/judgement/{country}/{id}','JudgementController@all_countries_court_case');
+
+	
+	//Africa Law Judgements	
+	Route::get('/judgement/all-countries/Africa/{id}','JudgementController@africa_court');
+	//Asia Law Judgements	
+	Route::get('/judgement/all-countries/Asia/{id}','JudgementController@asia_court');
+	//Europe Law Judgements	
+	Route::get('/judgement/all-countries/Europe/{id}','JudgementController@europe_court');
+	//North America Law Judgements	
+	Route::get('/judgement/all-countries/North_America/{id}','JudgementController@north_america_court');
+	//South America Law Judgements	
+	Route::get('/judgement/all-countries/South_America/{id}','JudgementController@south_america_court');
+	
+
 
 
 //Forum routes

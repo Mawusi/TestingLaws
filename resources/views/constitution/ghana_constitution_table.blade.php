@@ -57,7 +57,7 @@
 
     @include('layouts.constitution_menu')
 
-    <div class="container">
+    <div class="container" style="text-align:center; font-size:25px;">
         <p><b>{{ $ghana_act['title'] }}</b></p>
     </div>
 
@@ -71,7 +71,13 @@
             <li class="tabPanedHide_acts_content">
                 <a href="#contentTab" data-toggle="tab">Acts Content</a>
             </li>
+            <!-- Expanded View -->
+            <li class="tabPanedHide_expanded_view">
+                    <a href="#expandedTab" data-toggle="tab">Expanded View</a>
+            </li>
         </ul>
+
+        
 
         {{-- tab panes content --}}
         <div id="my-tab-content" class="tab-content">
@@ -95,7 +101,7 @@
                     </div>
 
                             <!-- Downloads and Advertisement -->
-                            @include('content.container_plain')
+                            @include('constitution.container_plain')
                 </div>
 
             </div>
@@ -109,10 +115,8 @@
                         <div id="display_preamble"></div>
                         <div id="display_view_all_section"></div>  
                     </div>
-                    
                     @include('constitution.container_details_constitution')
                 </div>
-
                 <div class="row show">
                     <div class="pager col-md-10 col-md-offset-6">
                      <ul class="pager">
@@ -121,8 +125,27 @@
                      </ul>
                     </div>
                 </div>
-
             </div>
+
+            <!-- ACTS EXPANDED CONTENTS -->
+            <div id="expandedTab" class="tab-pane fade">
+                <div class="row">
+                     <div class="col-md-10 expanded_view">
+                        <div id="acts_expanded_view"></div> 
+                    </div>
+                    {{--@include('content.container_details_act_expanded')--}}
+                </div>
+                {{--
+                <div class="row show">
+                    <div class="pager col-md-10 col-md-offset-6">
+                     <ul class="pager">
+                        <li><a href="#" id="previous_content_act">Previous</a></li>
+                        <li><a href="#" id="next_content_act">Next</a></li>
+                     </ul>
+                    </div>
+                </div>--}}
+            </div>
+
         </div>
     </div><!--end of container-fluid-->
 @endsection

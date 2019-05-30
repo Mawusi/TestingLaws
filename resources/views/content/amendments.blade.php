@@ -13,7 +13,8 @@
                     <table class="table table-striped table-condensed" id="datatable">
                         <thead>
                             <tr>
-                                <th>All Post 1992 Amendments</th>           
+                                <th>All Post 1992 Amendments</th>
+                                <th>Year</th>           
                             </tr>
                         </thead>
                         <tbody>
@@ -21,7 +22,9 @@
                             <tr>
                                 <td>
                                     <a href="/post_1992_legislation/amended-title/{{ $allPostsAmend->id }}"><li style="list-style: none;">{{ $allPostsAmend->name }}</li></a>
-                                </td>   
+                                </td>
+                                <td>{{ $allPostsAmend->year }}</td>   
+   
                             </tr>
                         @endforeach
                         

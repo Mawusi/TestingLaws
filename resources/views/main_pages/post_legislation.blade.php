@@ -1,3 +1,4 @@
+
 @extends('layouts.main')
 
 @section('assets')
@@ -16,6 +17,7 @@
                         <thead>
                             <tr>
                                 <th>All Post 1992 Legislation</th>
+                                <th>Year</th>
                             </tr>
                         </thead>
                         <tbody>

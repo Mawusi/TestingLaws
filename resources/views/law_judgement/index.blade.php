@@ -15,7 +15,8 @@
                     <table class="table table-striped table-condensed" id="datatable">
                         <thead>
                             <tr>
-                                <th>All Laws Judgements</th>
+                                <th>Ghana Law Judgements</th>
+                                <th>Year</th>
                             </tr>
                         </thead>
                         <tbody>

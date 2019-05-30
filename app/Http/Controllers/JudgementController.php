@@ -10,10 +10,12 @@ use App\CircuitCourtJudgement;
 use App\DistrictCourtJudgement;
 use App\InternationalCasesjudgement;
 use App\LawJudgementCategory;
+use App\AfricaLawJudgement;
+use App\AllCountriesJudgement;
 
 class JudgementController extends Controller
 {
-    // ALL LAW JUDGEMENT
+    // ALL GHANA LAW JUDGEMENT
     public function index(){
         $supremeCourts = SupremeCourtJudgement::all();
         $highCourts = HighCourtJudgement::all();
@@ -39,11 +41,11 @@ class JudgementController extends Controller
         }
 
         $supremeCourts       = ($bool)?SupremeCourtJudgement::where($where)->get():SupremeCourtJudgement::all();
-        $highCourts = ($bool)?HighCourtJudgement::where($where)->get():HighCourtJudgement::all();
-        $courtOfAppeals = ($bool)?CourtOfAppealJudgement::where($where)->get():CourtOfAppealJudgement::all();
-        $circuitCourts = ($bool)?CircuitCourtJudgement::where($where)->get():CircuitCourtJudgement::all();
-        $districtCourts = ($bool)?DistrictCourtJudgement::where($where)->get():DistrictCourtJudgement::all();
-        $categories     = LawJudgementCategory::all();
+        $highCourts          = ($bool)?HighCourtJudgement::where($where)->get():HighCourtJudgement::all();
+        $courtOfAppeals      = ($bool)?CourtOfAppealJudgement::where($where)->get():CourtOfAppealJudgement::all();
+        $circuitCourts       = ($bool)?CircuitCourtJudgement::where($where)->get():CircuitCourtJudgement::all();
+        $districtCourts      = ($bool)?DistrictCourtJudgement::where($where)->get():DistrictCourtJudgement::all();
+        $categories          = LawJudgementCategory::all();
         return view('law_judgement.index', compact('supremeCourts', 'highCourts', 'circuitCourts','courtOfAppeals', 'districtCourts','categories'));
     }
 
@@ -68,13 +70,11 @@ class JudgementController extends Controller
         $highCourts = HighCourtJudgement::all();
         return view('law_judgement.high_court', compact('highCourts'));
     }
-
     public function high_court_case($id){
         $highCourt = HighCourtJudgement::find(['id' => $id])->toArray()[0];
         $highCourts = HighCourtJudgement::all();
         return view('law_judgement.high_court_case', compact('highCourt','highCourts'));
     }
-
     public function high_court_case_view($id){
         $highCourt = HighCourtJudgement::find(['id' => $id])->toArray()[0];
         return view('law_judgement.high_court_case_view', compact('highCourt'));
@@ -86,13 +86,11 @@ class JudgementController extends Controller
         $courtOfAppeals = CourtOfAppealJudgement::all();
         return view('law_judgement.court_of_appeal', compact('courtOfAppeals'));
     }
-
     public function court_of_appeal_case($id){
         $courtOfAppeal = CourtOfAppealJudgement::find(['id' => $id])->toArray()[0];
         $courtOfAppeals = CourtOfAppealJudgement::all();
         return view('law_judgement.court_of_appeal_case', compact('courtOfAppeal','courtOfAppeals'));
     }
-
     public function court_of_appeal_case_view($id){
         $courtOfAppeal = CourtOfAppealJudgement::find(['id' => $id])->toArray()[0];
         return view('law_judgement.court_of_appeal_case_view', compact('courtOfAppeal'));
@@ -103,13 +101,11 @@ class JudgementController extends Controller
         $circuitCourts = CircuitCourtJudgement::all();
         return view('law_judgement.circuit_court', compact('circuitCourts'));
     }
-
     public function circuit_court_case($id){
         $circuitCourt = CircuitCourtJudgement::find(['id' => $id])->toArray()[0];
         $circuitCourts = CircuitCourtJudgement::all();
         return view('law_judgement.circuit_court_case', compact('circuitCourt','circuitCourts'));
     }
-
     public function circuit_court_case_view($id){
         $circuitCourt = CircuitCourtJudgement::find(['id' => $id])->toArray()[0];
         return view('law_judgement.circuit_court_case_view', compact('circuitCourt'));
@@ -121,13 +117,11 @@ class JudgementController extends Controller
         $districtCourts = DistrictCourtJudgement::all();
         return view('law_judgement.district_court', compact('districtCourts'));
     }
-
     public function district_court_case($id){
         $districtCourt = DistrictCourtJudgement::find(['id' => $id])->toArray()[0];
         $districtCourts = DistrictCourtJudgement::all();
         return view('law_judgement.district_court_case', compact('districtCourt','districtCourts'));
     }
-
     public function district_court_case_view($id){
         $districtCourt = DistrictCourtJudgement::find(['id' => $id])->toArray()[0];
         return view('law_judgement.district_court_case_view', compact('districtCourt'));
@@ -138,15 +132,60 @@ class JudgementController extends Controller
         $internationalCases = InternationalCasesjudgement::all();
         return view('law_judgement.international_cases', compact('internationalCases'));
     }
-
     public function international_case_title($id){
         $internationalCase = InternationalCasesjudgement::find(['id' => $id])->toArray()[0];
         $internationalCases = InternationalCasesjudgement::all();
         return view('law_judgement.international_cases_title', compact('internationalCase','internationalCases'));
     }
-
     public function international_cases_view($id){
         $internationalCase = InternationalCasesjudgement::find(['id' => $id])->toArray()[0];
         return view('law_judgement.international_cases_view', compact('internationalCase'));
     }
+
+
+    
+
+    //All Countries Judgement laws   
+    public function all_countries_laws(){
+        $allJudgementLaws = AllCountriesJudgement::all();
+        return view('law_judgement.all_countries', compact('allJudgementLaws'));
+    }
+
+    public function all_countries_court_case($id, $country){
+        $allJudgementLaw = AllCountriesJudgement::find(
+            [
+                'id' => $id,
+                'country' => $country
+            ])->toArray()[0];
+
+        $allJudgementLaws = AllCountriesJudgement::all();
+        return view('law_judgement.all_countries_court_case', compact('allJudgementLaws', 'allJudgementLaw'));
+    }
+
+    //AFRICA
+    public function africa_court($id){
+        $africaJudgements = AllCountriesJudgement::where(['all_continent_name' => $id])->get();
+        return view('law_judgement.africa_court', compact('africaJudgements'));
+    }
+    //ASIA
+    public function asia_court($id){
+        $asiaJudgements = AllCountriesJudgement::where(['all_continent_name' => $id])->get();
+        return view('law_judgement.asia_court', compact('asiaJudgements'));
+    }
+    //EUROPE
+    public function europe_court($id){
+        $europeJudgements = AllCountriesJudgement::where(['all_continent_name' => $id])->get();
+        return view('law_judgement.europe_court', compact('europeJudgements'));
+    }
+    //NORTH AMERICA
+    public function north_america_court($id){
+        $northAmericaJudgements = AllCountriesJudgement::where(['all_continent_name' => $id])->get();
+        return view('law_judgement.north_america_court', compact('northAmericaJudgements'));
+    }
+    //SOUTH AMERICA
+    public function south_america_court($id){
+        $southAmericaJudgements = AllCountriesJudgement::where(['all_continent_name' => $id])->get();
+        return view('law_judgement.south_america_court', compact('southAmericaJudgements'));
+    }
+
 }

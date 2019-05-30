@@ -6,7 +6,7 @@
 
 @section('content')
 
-    @include('layouts.judgement_menu')
+    @include('layouts.judgement_menu_others')
 
     <div class="container-fluid row-margin">
         <div class="row">
@@ -15,24 +15,18 @@
                     <table class="table table-striped table-condensed" id="datatable">
                         <thead>
                             <tr>
-                                <th>All Supreme Court Cases</th>
+                                <th>All Foreign Law Judgements</th>
+                                <th>Country</th>
                                 <th>Year</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($supremeCourts as $supremeCourt)
-                                <tr>
-                                    <td>
-                                        <a href="/judgement/supreme-court-case-title/{{ $supremeCourt->id}}"><li style="list-style: none;">{{ $supremeCourt->case_title }}</li></a>
-                                    </td> 
-                                    <td>{{ $supremeCourt->year }}</td>  
-                                </tr>
-                            @endforeach
+                            @include('law_judgement.index_africa')
                         </tbody>
                     </table>
                 </div>
             </div>
-                            @include('AllPosts.container_main_all')
+                            @include('law_judgement.judgement_contain_main')
         </div>
     </div>
 

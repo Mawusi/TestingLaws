@@ -79,7 +79,7 @@ class Post1992Controller extends Controller
 
     
     //ALL ACTS OF PARLIAMENT
-    public function actsOfParliament($id = 1){
+    public function actsOfParliament($id){
         $myActsOfParliaments    = Post1992LegislationAct::where(['post1992_group_name' => $id])->get();
         $categories     = Post1992Category::all();
         return view('content.actsOfParliament', compact('myActsOfParliaments', 'categories'));

@@ -12,9 +12,10 @@
 			<label>By Categories:</label>
 			<select class="form-control browser-default custom-select judgement_filter_category" style="width: 154px;">
 				<option selected value="">Select Category</option>
-				@foreach($categories as $key_categories)
+
+				{{--@foreach($categories as $key_categories)
 				<option value="{{ $key_categories->id }}">{{ $key_categories->name }}</option>
-				@endforeach	
+				@endforeach--}}	
 			</select>
 		    <hr>
 		    <input class="btn btn-primary" type="button" name="go" value="Go" id="all_judgement">
@@ -24,7 +25,7 @@
 	</div>
 
 	{{-- Advertisement --}}
-	<div class="col-md-3">
+	<div class="col-md-2">
 		<div class="panel panel-default">
 		  <div class="panel-heading">
 		    <h3 class="panel-title">Advertisement</h3>

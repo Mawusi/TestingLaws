@@ -2,6 +2,7 @@
     <tr>
         <td>
             <a href="/judgement/supreme-court-case-title/{{ $supremeCourt->id}}"><li style="list-style: none;">{{ $supremeCourt->case_title }}</li></a>
-        </td>   
+        </td> 
+        <td>{{ $supremeCourt->year }}</td>
     </tr>
 @endforeach

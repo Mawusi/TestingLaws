@@ -16,6 +16,7 @@
                         <thead>
                             <tr>
                                 <th>All District Court Cases</th>
+                                <th>Year</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -24,6 +25,7 @@
                                     <td>
                                         <a href="/judgement/district-court-case-title/{{ $districtCourt->id}}"><li style="list-style: none;">{{ $districtCourt->case_title }}</li></a>
                                     </td>   
+                                    <td>{{ $districtCourt->year }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

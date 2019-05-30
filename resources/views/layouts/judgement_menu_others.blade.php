@@ -9,13 +9,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand"><small>Constitution</small></a>
+      <a class="navbar-brand"><small>Foreign Law Judgements</small></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       {{-- <ul class="nav navbar-nav"> --}}
-       {{ menu('constitution_menu', 'bootstrap') }} 
+      {{ menu('law_judgement_menu_others', 'bootstrap') }}   
       {{-- </ul> --}}
       <form class="navbar-form navbar-right">
         <i class="fas fa-search" aria-hidden="true"></i>

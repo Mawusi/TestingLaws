@@ -7,7 +7,7 @@
 
 @section('content')
 
-@include('layouts.post_1992_menu')
+    @include('layouts.post_1992_menu')
 
     <div class="container-fluid row-margin">
         <div class="row">
@@ -17,6 +17,7 @@
                         <thead>
                             <tr>
                                 <th>All Acts of Parliaments</th>
+                                <th>Year</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -24,7 +25,8 @@
     					<tr>
         					<td>
         						<a href="/post_1992_legislation/act-title/{{ $actsOfParliament->id }}"><li style="list-style: none;">{{ $actsOfParliament->title }}</li></a>
-        					</td>   
+        					</td> 
+                            <td>{{ $actsOfParliament->year }}</td>   
     					</tr>
 						@endforeach
                         </tbody>

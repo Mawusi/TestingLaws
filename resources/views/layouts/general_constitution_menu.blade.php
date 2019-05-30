@@ -15,7 +15,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       {{-- <ul class="nav navbar-nav"> --}}
-       {{ menu('constitution_menu', 'bootstrap') }} 
+       {{ menu('general_constitution_menu', 'bootstrap') }} 
       {{-- </ul> --}}
       <form class="navbar-form navbar-right">
         <i class="fas fa-search" aria-hidden="true"></i>

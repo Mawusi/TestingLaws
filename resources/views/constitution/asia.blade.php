@@ -1,3 +1,4 @@
+
 @extends('layouts.main')
 
 @section('assets')
@@ -6,36 +7,38 @@
 
 @section('content')
 
-    @include('layouts.judgement_menu')
+    @include('layouts.constitution_menu')
 
     <div class="container-fluid row-margin">
         <div class="row">
-            <div class="col-md-7" >
+            <div class="col-md-8">
                 <div class="list-group">
                     <table class="table table-striped table-condensed" id="datatable">
                         <thead>
                             <tr>
-                                <th>All Supreme Court Cases</th>
-                                <th>Year</th>
+                                <th>Name of Country</th>
+                                <th>Constitution Name</th>
+                                <th>Year of Constitution</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($supremeCourts as $supremeCourt)
-                                <tr>
-                                    <td>
-                                        <a href="/judgement/supreme-court-case-title/{{ $supremeCourt->id}}"><li style="list-style: none;">{{ $supremeCourt->case_title }}</li></a>
-                                    </td> 
-                                    <td>{{ $supremeCourt->year }}</td>  
-                                </tr>
-                            @endforeach
+                        @foreach($asiaConstitutions as $asiaConstitution)
+                        <tr>
+                            <td>{{ $asiaConstitution->name }}</td>
+                            <td>
+                                <a href="/constitution/all-countries/act-title/{{ $asiaConstitution->id }}"><li style="list-style: none;">{{ $asiaConstitution->constitution_name }}</li></a>
+                            </td>
+                            <td>{{ $asiaConstitution->year }}</td>   
+                        </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
-                            @include('AllPosts.container_main_all')
+                            {{--@include('AllPosts.container_main_all')--}}
         </div>
     </div>
-
+    
 @endsection
 
 @section('scripts')

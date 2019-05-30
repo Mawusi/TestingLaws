@@ -596,7 +596,7 @@ $(document).ready(function(){
         if(category === ""){
              category = 0;
         }
-        window.location.href = '/judgement/filter/'+year+'/'+category;
+        window.location.href = '/judgement/Ghana/filter/'+year+'/'+category;
     });
 
 // PAGINATION FOR THE ACCORDION

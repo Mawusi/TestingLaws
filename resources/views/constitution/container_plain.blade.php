@@ -19,7 +19,7 @@
             <a href=""><li style="list-style: none;">Draft Bill(PDF)</li></a>
         <hr>
 
-        {{--<a class="expanded_link" id="expanded_link_toggle" href="/post_1992_legislation/expanded-view/{{ $myAct['id'] }}"><li style="list-style: none;">Expanded View</li></a>--}}
+        <a class="expanded_link" id="expanded_link_toggle" href="/constitution/expanded-view/{{ $ghana_act['id'] }}"><li style="list-style: none;">Expanded View</li></a>
         <hr>
 
       </div>
